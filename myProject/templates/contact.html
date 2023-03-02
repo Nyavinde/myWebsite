@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="row">
+  <div class="container col-lg-4 mx-auto mt-3">
+
+
+    <h3>Product added to cart successfully.</h3>
+<td>
+  <a class="btn btn-primary" href="{% url 'myApp:home' %}">Go To Home</a>
+
+    <a class="btn btn-primary" href="{% url 'myApp:product' %}">Continue shopping</a>
+</td>
+
+
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Checkout{% endblock %}
+{% block content %}
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Items in my cart</h3>
+      <table class='table'>
+        <thead>
+          <tr>
+            <th>SN</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Rate</th>
+            <th>Subtotal</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for v in cart.cartproduct_set.all %}
+          <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{v.product.title}}</td>
+            <td>{{v.quantity}}</td>
+            <td>{{v.rate}}</td>
+            <td>R {{v.subtotal}}.00</td>
+
+            {% endfor %}
+          <tr>
+            <th colspan="4" class="text-right">Total</th>
+            <th>R{{cart.total}}.00</th>
+          </tr>
+          </tbody>
+
+          </table>
+
+          <a class="btn btn-primary" href="{% url 'myApp:mycart' %}">Back To Cart</a>
+    </div>
+
+
+    <div class="col-md-2">
+
+      <h3>Checkout Form</h3>
+
+      <form  action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-primary">Place an order</button>
+
+      </form>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+{% endblock %}

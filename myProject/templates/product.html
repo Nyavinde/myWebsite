@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Products{% endblock %}
+{% block content %}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+<div class="container ">
+   <div class="row mt-4">
+    {% for p in product_list %}
+    <div class="col-md-3 card">
+      <div class="md-5 ">
+
+     <h3>{{p.title}}</h3>
+     <img src="{{p.image.url}}" alt="" class="img-fluid" style="height:180px; object-fit:contain">
+     <p class="mt-3">Price:R{{p.selling_price}}.00</p>
+     <a href="{% url 'myApp:addtocart' p.id %}"class="btn btn-primary">Add To Cart</a>
+
+     </div>
+    </div>
+
+  {% endfor %}
+</div>
+
+</div>
+<br>
+<footer class="bg-dark">
+
+    <div class="row text-ceter text-md-left">
+
+      <div class=" text-light col-md-5 col-lg-3  mx-auto mt-3">
+        <div>
+          <ul class="d-flex gap-5 list-unstyled">
+            <li><a href="https://web.facebook.com/?_rdc=1&_rdr"><i class="bi bi-facebook"></i></a></li>
+            <li><a href="https://twitter.com/?lang=en"><i class="bi bi-twitter"></i></a></li>
+            <li><a href="+72 8934 473"><i class="bi bi-telephone"></i></a></li>
+            <li><a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a></li>
+            <li><a href="#"><i class="bi bi-fax"></i></a></li>
+          </ul>
+        </div>
+        <h6>Our Chicken Poultry Farm</h6>
+
+      </div>
+    </div>
+
+</footer>
+{% endblock %}

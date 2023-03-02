@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Dolly&Sabby</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  </head>
+  <body style="background-color:Gainsboro;">
+
+      <div class="container-1">
+        <nav class="navbar navbar-expand-lg navbar-light bg-secondary" >
+
+<div class="container-fluid">
+
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="navbar-brand" href="{% url 'myApp:home' %}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand"  href="{% url 'myApp:product' %}">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand" href="{% url 'myApp:about' %}">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand" href="{% url 'myApp:team' %}">Team</a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand" href="{% url 'myApp:mycart' %}">Cart</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="navbar-brand dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+          Account
+        </a>
+        <ul class="dropdown-menu">
+              {% if request.user.customer %}
+              welcome {{request.user.username}}
+              <a class="dropdown-item" href="{% url 'myApp:customerlogout' %}">Logout</a>
+                {% else %}
+              <a class="dropdown-item" href="{% url 'myApp:customerregistration' %}">Register</a>
+              <a class="dropdown-item" href="{% url 'myApp:customerlogin' %}">Login</a>
+              {% endif %}
+        </ul>
+
+      </li>
+
+
+    </ul>
+    <div class="owners">
+    <h5>Dolly&Sabby</h5>
+      <h6>Poultry Chicken Farm</h6>
+
+    </div>
+
+
+</div>
+</nav>
+
+      </div>
+
+
+    </header>
+
+
+
+
+    {% block content %}
+
+    {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

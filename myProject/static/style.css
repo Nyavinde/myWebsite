@@ -1,0 +1,147 @@
+*{
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+text-decoration: none;
+list-style: none;
+}
+body{
+font-family: sans-serif;
+}
+video{
+  position: absolute;
+  object-fit: cover;
+  width:100%;
+  height: 100%;
+  top: 9%;
+  left: 0;
+  font-family: 'object-fit: cover';
+}
+nav{
+background: grey;
+height: 80px;
+width: 100%;
+position: fixed;
+z-index: 99;
+}
+.logo{
+  width: 55%;
+  float: left;
+  padding-left: 50px;
+  padding-top: 20px;
+}
+nav logo{
+float: left;
+line-height: 50px;
+
+}
+}
+nav ul{
+
+float: center;
+margin-right: 10px;
+}
+nav a:hover{
+
+  background-color: black;
+  color:blue;
+}
+nav ul li{
+display: inline-block;
+line-height: 10px;
+margin: 0 10px;
+padding-top: 30px;
+padding-left: 30px;
+/* float: right; */
+}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+.col{
+  background-color: khaki;
+  padding-bottom: 25px;
+  padding-left: 10%;
+}
+.row{
+ background-color: #FFE4C4;
+ /* color: #A9A9A9; */
+  padding-top: 200px;
+}
+.row h1{
+  padding-top: 80px;
+}
+.hero{
+  height: 100px;
+}
+.col h1{
+padding-left:10%;
+  padding-top: 80px;
+}
+.call{
+  padding-top: 100px;
+  padding-left: 30px;
+  background-color: #708090;
+}
+.num{
+  padding-top: 70px;
+  background-color: #708090;
+  padding-bottom: 70px;
+}
+/* .container{
+  max-width: 1200px;
+  margin: auto;
+  background: #f2f2f2;
+  overflow: auto;
+  padding-top: 50px;
+  background-color: grey:
+} */
+.container h1{
+  padding-left: 50%;
+}
+.gallery{
+margin: 5px;
+boarder:1px solid #ccc;
+float: left;
+width: 390px;
+
+
+}
+.gallery img{
+  width: 100%;
+  height: auto;
+
+}
+img{
+
+   border: 5px solid #555;
+}
+
+.find_us h1{
+  padding-left: 20px;
+}
+.find_us h4{
+  padding-left: 50px;
+}
+.btn-submit{
+  padding: 2px;
+  border-radius: 5px;
+}
+.btn-submit:hover{
+  cursor: pointer;
+  /* color: black; */
+  background-color: grey;
+  padding: 5px;
+
+}
+#cart-icon{
+  width: 35px;
+  padding-bottom: 10px;
+  border: none;
+}
+#cart-total{
+  color: red;
+  padding-left: 20px;
+
+}
